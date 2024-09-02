@@ -19,6 +19,7 @@
 
     // routes 
     app.use("/api/useraccount",require("./routers/userAccountRoute"));
+    app.use("/api/useraccount/login",require("./routers/loginRoute"));
 
     // running the server on port by checking if the Connection is successfull with database Atlas  
     const Port =  5000;

@@ -1,88 +1,30 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react';
-import { Link } from 'react-router-dom'
-import "./NavStyle.css"
-
+import React from 'react'
+import {Link} from 'react-router-dom'
 const Navbar = () => {
-    const [username, setUsername] = useState('Guest');
-    const [isLogedIn,setIsLoged] =useState(false);
-    const [userRole,setUserRole] = useState(null);
-
-
-  return (<>
-  <nav className='nav'>
-    
-  <header class="header-area section-padding-1 transparent-bar">
-    <div class="header-large-device">
-        <div class="header-bottom sticky-bar">
-            <div class="container-fluid">
-                <div class="header-bottom-flex">
-                    <div class="logo-menu-wrap">
-                        <div class="logo">
-                            <Link to="/">
-                                <img  src="assets/images/logo/logo-6.png" alt="logo" />
-                            </Link>
-                        </div>
-                        <div class="main-menu menu-lh-1 main-menu-padding-1 menu-mrg-1">
-                            <nav>
-                                <ul>
-                                    <li><Link to="/">Home</Link>
-                                  
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="header-action-wrap header-action-flex header-action-width header-action-mrg-1">
-                        <div class="search-style-1">
-                            <form>
-                                <div class="form-search-1">
-                                    <input class="input-text" value="" placeholder="Type to search (Ex: Phone, Laptop)" type="search"/>
-                                    <button>
-                                        <i class="icofont-search-1"></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                  <div className="same-style">
-                  <Link to='/Login'><button className='btn btn-dark'>login/Signup</button></Link>
-              </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  return (
+    <>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <Link class="navbar-brand" to="/">Navbar</Link>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <Link class="nav-link active" aria-current="page" to="/">Home</Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link active" aria-current="page" to="/login">Login</Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link active" aria-current="page" to="/signup">Signup</Link>
+        </li>
+      </ul>
     </div>
-    <div class="header-small-device header-small-ptb sticky-bar">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-6">
-                    <div class="mobile-logo mobile-logo-width">
-                        <a href="index.html">
-                            <img alt="" src="assets/images/logo/logo-9.png"/>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="header-action-wrap header-action-flex header-action-mrg-1">
-                        <div class="same-style header-cart">
-                            <a class="cart-active" href="#"><i class="icofont-shopping-cart"></i></a>
-                        </div>
-                        <div class="same-style header-info">
-                            <button class="mobile-menu-button-active">
-                                <span class="info-width-1"></span>
-                                <span class="info-width-2"></span>
-                                <span class="info-width-3"></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-  </nav>
-  
-  </>
+  </div>
+</nav>
+    </>
   )
 }
 
